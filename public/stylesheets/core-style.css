@@ -291,9 +291,7 @@ img {
     padding: 100px 0;
 }
 
-.section_padding_100_0 {
-    padding: 100px 0 0;
-}
+
 
 .section_padding_0_100 {
     padding: 0 0 100px;
@@ -1329,7 +1327,7 @@ img {
 .footer_area {
     background-color: #f760ff;
     border-top: 2px solid #e5e5e5;
-    padding: 100px 0 50px;
+    padding: 30px 0 0px;
 }
 
 .footer_content > p {

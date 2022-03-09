@@ -12,7 +12,7 @@ const createError       =require('http-errors'),
       app = express();
 
 // view engine setup
-mongoose.connect('mongodb://heroku/badescarf');
+const uri = process.env.MONGODB_URI;
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 

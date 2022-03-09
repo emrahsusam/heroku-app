@@ -1,15 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
-var app = express();
+const createError       =require('http-errors'),
+      mongoose          =require('mongoose'),
+      express           =require('express'),
+      passport          =require('passport'),
+      LocalStrategy     =require('passport-local'),
+      bodyParser        =require('body-parser'),
+      path              = require('path'),
+      cookieParser      = require('cookie-parser'),
+      logger            = require('morgan'),
+      indexRouter       = require('./routes/index'),
+      usersRouter       = require('./routes/users'),
+      app = express();
 
 // view engine setup
+mongoose.connect('mongodb://heroku/badescarf');
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 

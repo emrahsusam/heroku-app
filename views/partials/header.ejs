@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-    <title><%= title %></title>
+    <title>Badescarf - Şal & Eşarp | Şal  Eşarp</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link href="img/core-img/favicon.ico">
     <!-- Core Style CSS -->
@@ -60,10 +60,6 @@
                 <!-- Single Item -->
                 <li data-toggle="collapse" data-target="#aksesuar" class="collapsed">
                     <a href="#">AKSESUAR<span class="arrow"></span></a>
-                    <ul class="sub-menu collapse" id="aksesuar">
-                        <li><a href="#">Bone</a></li>
-                        <li><a href="#">İğne</a></li>
-                    </ul>
                 </li>
             </ul>
         </div>
@@ -88,28 +84,17 @@
                             <!-- Cart & Menu Area -->
                             <div class="header-cart-menu d-flex align-items-center ml-auto">
                                 <!-- Cart Area -->
-                                <div class="cart">
-                                    <a href="#" id="header-cart-btn" target="_blank"><span class="cart_quantity">1</span> <i class="ti-bag"></i> Sepet </a>
+                               <div class="cart">
+                                    <a href="#" id="header-cart-btn" target="_blank"><i class="ti-search"></i></a>
                                     <!-- Cart List Area Start -->
-                                    <ul class="cart-list">
-                                        <li>
-                                            <a href="#" class="image"><img src="img/product-img/product-10.jpg" class="cart-thumb" alt=""></a>
-                                            <div class="cart-item-desc">
-                                                <h6><a href="#">İPEK TWİLL</a></h6>
-                                                <p>1x - <span class="price">69₺</span></p>
-                                            </div>
-                                            <span class="dropdown-product-remove"><i class="icon-cross"></i></span>
-                                        </li>
-
-                                        <li class="total">
-                                            <span class="pull-right">TOPLAM: 69₺</span>
-                                            <a href="cart.html" class="btn btn-sm btn-cart">SEPETİM</a>
-                                            <a href="checkout.html" class="btn btn-sm btn-checkout">SATIN AL</a>
-                                        </li>
-                                    </ul>
                                 </div>
-                                <div class="header-right-side-menu ml-15">
-                                    <a href="#" id="sideMenuBtn"><i class="ti-menu" aria-hidden="true"></i></a>
+
+                                <div class="cart">
+                                    <a href="#" id="header-cart-btn" target="_blank"><i class="ti-heart"></i></a>
+                                </div>
+
+                                <div class="header-right-side-menu">
+                                    <a href="#" id="sideMenuBtn" target="_blank"><i class="ti-bag" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -139,11 +124,19 @@
 
                                 <div class="collapse navbar-collapse align-items-start collapse" id="karl-navbar">
                                     <ul class="navbar-nav animated" id="nav">
-                                        <li class="nav-item active"><a class="nav-link" href="/">Anasayfa</a></li>
+                                        <li class="nav-item active"><a class="nav-link" href="/">ANASAYFA</a></li>
                                         <li class="nav-item"><a class="nav-link" href="/sal">ŞAL</a></li>
                                         <li class="nav-item"><a class="nav-link" href="/esarp">EŞARP</a></li>
                                         <li class="nav-item"><a class="nav-link" href="/hediyekutu"><span class="karl-level">YENİ</span>HEDİYE KUTU</a></li>
                                         <li class="nav-item"><a class="nav-link" href="/aksesuar">AKSESUAR</a></li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="karlDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">HESABIM</a>
+                                            <div class="dropdown-menu" aria-labelledby="karlDropdown">
+                                                <a class="dropdown-item" href="signin">Giriş Yap</a>
+                                                <a class="dropdown-item" href="signup">Kaydol</a>
+
+                                            </div>
+                                        </li>
                                     </ul>
                                 </div>
 
@@ -153,6 +146,7 @@
                         <div class="help-line">
                             <a href="#"><i class="ti-headphone-alt "></i> CANLI YARDIM </a>
                         </div>
+
                     </div>
                 </div>
             </div>

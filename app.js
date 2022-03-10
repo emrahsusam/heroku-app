@@ -13,7 +13,7 @@ const createError       =require('http-errors'),
       app = express();
 
 // view engine setup
-mongoose.connect('mongodb+srv://emrahsusam:eS197644@heroku-app.tqour.mongodb.net/heroku-app?retryWrites=true&w=majority');
+mongoose.connect('MONGODB_URI');
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended:true}));

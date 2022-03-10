@@ -10,11 +10,13 @@ var app = require('../app');
 var debug = require('debug')('heroku-app:server');
 var http = require('http');
 
+
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '3000');
+const uri = process.env.MONGODB_URI;
 app.set('port', port);
 
 /**

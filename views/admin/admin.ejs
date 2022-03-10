@@ -1,0 +1,24 @@
+<%- include ../partials/header.ejs %>
+
+<div class="container">
+    <% adminActions.forEach((action)=>{ %>
+
+
+       <div class="row">
+           <div class="col-lg-3 mx-auto">
+               <button id="<%=action.actionId%>" onclick="catchID(this.id)" type="button" class="btn btn-outline-primary btn-block float-left"> <%=action.displayName%></button>
+           </div>
+       </div>
+    <% }); %>
+</div>
+
+<script>
+    function catchID(clicked_id) {
+        alert(clicked_id+" numaralı butona tıklandı.")
+        if(clicked_id == 1){
+            window.location.href= "changeHomeImage" return false;
+        }
+    }
+</script>
+
+<%- include ../partials/footer.ejs %>

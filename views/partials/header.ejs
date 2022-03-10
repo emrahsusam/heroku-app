@@ -125,16 +125,23 @@
                                 <div class="collapse navbar-collapse align-items-start collapse" id="karl-navbar">
                                     <ul class="navbar-nav animated" id="nav">
                                         <li class="nav-item active"><a class="nav-link" href="/">ANASAYFA</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="/sal">ŞAL</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="/esarp">EŞARP</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="/hediyekutu"><span class="karl-level">YENİ</span>HEDİYE KUTU</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="/aksesuar">AKSESUAR</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="sal">ŞAL</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="esarp">EŞARP</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="hediyekutu"><span class="karl-level">YENİ</span>HEDİYE KUTU</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="aksesuar">AKSESUAR</a></li>
+
+
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" href="#" id="karlDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">HESABIM</a>
                                             <div class="dropdown-menu" aria-labelledby="karlDropdown">
-                                                <a class="dropdown-item" href="signin">Giriş Yap</a>
-                                                <a class="dropdown-item" href="signup">Kaydol</a>
+                                                <% if(!currentUser){ %>
+                                                <a class="dropdown-item" href="/signin">Giriş Yap</a>
+                                                <a class="dropdown-item" href="/signup">Kaydol</a>
+                                                <% }else{ %>
+                                                <a class="dropdown-item" href="/admin"><%=currentUser.username%>/a>
 
+                                                <a class="dropdown-item" href="/signout">Çıkış Yap</a>
+                                                <% } %>
                                             </div>
                                         </li>
                                     </ul>

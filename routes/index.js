@@ -1,5 +1,5 @@
 const express = require('express'),
-      router = express.Router();
+    router = express.Router();
 
 let data = [
   {model: "sal",resim: "img/product-img/product-1.jpg",fiyat:"79,90₺",bilgi:"İpek Twill-Mimosa Çiçek Desenli Mor"},

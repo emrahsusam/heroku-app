@@ -12,10 +12,8 @@ const createError       =require('http-errors'),
       User              =require('./models/userModel'),
       app = express();
 
-
-
-
 // view engine setup
+mongoose.connect('MONGODB_URI');
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -38,16 +36,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Share current user info within all routes
-app.use((req,res,next)=>{
-  res.locals.currentUser=req.user;
-  next();
-});
-
-
-//Routes Using
-app.use(indexRouter);
-app.use(usersRouter);
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

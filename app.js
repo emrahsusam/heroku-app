@@ -12,8 +12,18 @@ const createError       =require('http-errors'),
       User              =require('./models/userModel'),
       app = express();
 
+//MongoDB
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/heroku-app', {
+  useNewUrlParser:true,
+  useUnifiedTopology:true
+});
+mongoose.connection.on('connected', ()=>{
+  console.log('Mongoose is connected!!!');
+});
+
+
 // view engine setup
-const uri = process.env.MONGODB_URI;
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -36,8 +46,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+if (process.env.NODE_ENV === 'production'){
+  app.use(express.static('client/build'));
+}
+
+//Share current user info within all routes
+app.use((req,res,next)=>{
+  res.locals.currentUser=req.user;
+  next();
+});
+
+
+//Routes Using
+app.use(indexRouter);
+app.use(usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

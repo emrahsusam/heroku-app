@@ -12,11 +12,17 @@ const createError       =require('http-errors'),
       User              =require('./models/userModel'),
       app = express();
 
+//MongoDB
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/heroku-app', {
+  useNewUrlParser:true,
+  useUnifiedTopology:true
+});
+mongoose.connection.on('connected', ()=>{
+  console.log('Mongoose is connected!!!');
+});
 
 
-
-
-const uri = process.env.MONGODB_URI;
 // view engine setup
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -39,6 +45,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+if (process.env.NODE_ENV === 'production'){
+  app.use(express.static('client/build'));
+}
 
 //Share current user info within all routes
 app.use((req,res,next)=>{
